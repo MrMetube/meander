@@ -1,0 +1,21 @@
+{
+  "name": "meander",
+  "displayName": "Meander",
+  "description": "A Color Theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Meander",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Meander-color-theme.json"
+      }
+    ]
+  }
+}
