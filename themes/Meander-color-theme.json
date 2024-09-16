@@ -572,19 +572,22 @@
 		"widget.shadow": "#161613",
 	},
 	/* 
-		#124128 green
+		#1A603B green
 		#00180d dark green
+
 		#f1d184 yellow
 		#b38a55 dark yellow
-		#94663e ligth brown
-		#754226 brown
-		#9B1144 dark red
+
+		#94663e brown
+		#754226 dark brown
+
+		#9B1144 red
 
 		#f5f3ef bright white
-		#ffb433 bright yellow
+		#ffb433 bright orange
 		#fe163d bright red
 		#009648 bright green
-		#00a0a5 bright blue
+		#157EB7 bright blue
 	*/
 	"tokenColors": [
 		{
@@ -595,92 +598,58 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#94663e"
+								"foreground": "#1A603B"
 			}
 		},
+
 		{
-			"name": "Variables, Colors",
-			"scope": [
-				"variable",
-				"string constant.other.placeholder",
-				
-				"constant.other.color"
-			],
-			"settings": {
-				"foreground": "#f1d184"
-			}
-		},
-		{
-			"name": "Invalid",
-			"scope": [
-				"invalid",
-				"invalid.illegal"
-			],
-			"settings": {
-				"foreground": "#1e0106"
-			}
-		},
-		{
-			"name": "Keyword, Storage, Operator",
+			"name": "Keyword, Operator",
 			"scope": [
 				"keyword",
-				"storage.type",
-				"keyword.control",
+								"keyword.control",
 				"keyword.operator",
 				"storage.type.function.arrow",
-				"storage.modifier",
-				"punctuation.definition.template-expression"
+				"punctuation.section.embedded",
+				"punctuation.definition.template-expression",
+				"storage.type.tsx",
+				"storage.type.type",
+				"storage.type.interface",
+				"storage.type.class"
 			],
 			"settings": {
 				"foreground": "#f5f3ef"
 			}
 		},
-		{
-			"name": "Punctuation",
-			"scope": [
-				"constant.other.color",
-				"punctuation",
-				"meta.tag",
-				"punctuation.section.embedded",
-				"keyword.other.template",
-				"keyword.other.substitution",
-				"meta.template.expression"
-			],
-			"settings": {
-				"foreground": "#f1d184"
-			}
-		},
-		{
+				{
 			"name": "Function, Special Method",
 			"scope": [
 				"entity.name.function",
-				// "meta.function-call",
-				"variable.function",
+								"variable.function",
 				"support.function",
-				"keyword.other.special-method"
+				"keyword.other.special-method",
+				"entity.name.tag",
 			],
 			"settings": {
 				"foreground": "#009648"
 			}
 		},
 		{
-			"name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
+			"name": "Keyword, Constant",
 			"scope": [
-				// "constant.numeric",
-				"constant.language",
+								"constant.language",
 				"support.constant",
 				"constant.character",
-				// "variable.parameter",
-				"keyword.other.unit",
+								"keyword.other.unit",
 				"keyword.other",
-				"keyword.function"
+				"keyword.function",
+				"invalid",
 			],
 			"settings": {
-				"foreground": "#9B1144"
+				"foreground": "#fe163d"
 			}
 		},
 		{
-			"name": "String, Symbols, Inherited Class, Markup Heading",
+			"name": "String, Symbols, Annotations",
 			"scope": [
 				"string",
 				"string.template",
@@ -689,27 +658,40 @@
 				"constant.other.key",
 				"entity.other.inherited-class",
 				"punctuation.definition.string",
-				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
+				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js",
 			],
 			"settings": {
-				"foreground": "#9B1144"
+				"foreground": "#ffb433"
 			}
 		},
 		{
-			"name": "Class, Support",
+			"name": "Types",
 			"scope": [
+"storage.type",
+				"support.type.primitive",
+				"support.type.builtin",
 				"entity.name",
-				"support.type",
-				"support.class",
+								"support.class",
 				"support.other.namespace.use.php",
 				"meta.use.php",
 				"support.other.namespace.php",
-				"support.type.sys-types"
+				"support.type.sys-types",
 			],
 			"settings": {
-				"foreground": "#00a0a5"
+				"foreground": "#157EB7"
 			}
 		},
+		{
+			"name": "Override",
+			"scope": [
+				"support.type.property-name",
+				"keyword.operator.type.annotation",
+			],
+			"settings": {
+				"foreground": "#f1d184"
+			}
+		},
+// -------------------------------------------------
 		{
 			"name": "Language methods, this/self",
 			"scope": [
@@ -717,15 +699,6 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-			}
-		},
-		{
-			"name": "Attributes",
-			"scope": [
-				"entity.other.attribute-name"
-			],
-			"settings": {
-				"foreground": "#00a0a5"
 			}
 		},
 		{
