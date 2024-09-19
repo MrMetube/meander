@@ -172,7 +172,7 @@
 		"extensionIcon.starForeground": "#e6db7455",
 		"extensionIcon.verifiedForeground": "#a6e22e55",
 		
-		"focusBorder": "#f1d184",
+		// "focusBorder": "#f1d184",
 		"foreground": "#f1d184",
 
 		"gitDecoration.addedResourceForeground": "#a6e22e",
@@ -578,6 +578,7 @@
 		"sideBarSectionHeader.background": "#00180d",
 		"sideBarActivityBarTop.border" : "#1A603B",
 		"sideBar.dropBackground": "#f1d18455",
+		
 		// "sideBarSectionHeader.border": "#1A603B",
 		// "sideBarTitle.background": "#1A603B",
 
@@ -719,6 +720,7 @@
 			"scope": [
 				"support.type.property-name",
 				"keyword.operator.type.annotation",
+				"entity.name.variable"
 			],
 			"settings": {
 				"foreground": "#f1d184"
@@ -728,10 +730,11 @@
 		{
 			"name": "Language methods, this/self",
 			"scope": [
-				"variable.language"
+				"variable.language",
 			],
 			"settings": {
 				"fontStyle": "italic",
+				"foreground": "#157EB7"
 			}
 		},
 		{
