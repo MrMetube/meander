@@ -132,8 +132,7 @@
 
 
 		"foreground": "#f1d184",
-
-
+        
 
 		"gitDecoration.addedResourceForeground": "#009052",
 		"gitDecoration.conflictingResourceForeground": "#ffb433",
@@ -222,7 +221,24 @@
 		"progressBar.background": "#6e7066",
 	
 		"sash.hoverBorder": "#6e7066",
-		
+
+        
+        "scmGraph.foreground1": "#009052",
+        "scmGraph.foreground2": "#f5f3ef",
+        "scmGraph.foreground3": "#ffb433",
+        "scmGraph.foreground4": "#12a4cc",
+        "scmGraph.foreground5": "#9B1144",
+        
+        "scmGraph.historyItemHoverAdditionsForeground": "#009052",
+        "scmGraph.historyItemHoverDeletionsForeground": "#9B1144",
+        
+        "scmGraph.historyItemHoverDefaultLabelBackground": "#ffb433",
+        
+        "scmGraph.historyItemHoverLabelForeground": "#001209",
+        "scmGraph.historyItemRefColor": "#f5f3ef",
+        "scmGraph.historyItemRemoteRefColor": "#ffb433",
+
+        
 		"selection.background": "#f5f3ef26",
 
 		// TODO
