@@ -235,7 +235,7 @@
         "scmGraph.historyItemHoverDefaultLabelBackground": "#ffb433",
         
         "scmGraph.historyItemHoverLabelForeground": "#001209",
-        "scmGraph.historyItemRefColor": "#f5f3ef",
+        "scmGraph.historyItemRefColor": "#009052",
         "scmGraph.historyItemRemoteRefColor": "#ffb433",
 
         
@@ -504,93 +504,69 @@
 	},
 	/* 
 		// TODO(viktor): split off background lighter green from lighter green for foreground
-		#1f7548 green
+		#1f7548 dim  green
 		#001209 dark green
-         
 		-------
-		#f1d184 brighter yellow
-        #9CC56B brighter green
-		-------
-         
 		#f5f3ef bright white
-		#ffb433 bright orange 
-		#fe163d bright red
-		#009052 bright green
-		#12a4cc bright blue
-		#9B1144 bright purple
+		#f1d184 bright yellow
+        #9CC56B bright green
+		-------
+		#ffb433 orange 
+		#fe163d red
+		#009052 green
+		#12a4cc blue
+		#9B1144 purple
          
 	*/
 	"tokenColors": [
-            {
+        {
 			"name": "Comment",
-			"scope": [
-				"comment",
-				"punctuation.definition.comment"
-			],
+			"scope": "comment",
 			"settings": {
+				"foreground": "#9B1144",
 				"fontStyle": "italic",
-				"foreground": "#9B1144"
 			}
 		},
 		
 		{
-			"name": "Keyword, Operator",
+			"name": "Keyword, Operator, Constant",
 			"scope": [
-				"keyword",
+                "keyword",
 				"storage.type.function.arrow",
-				"punctuation.section.embedded",
-				"punctuation.definition.template-expression",
-				"storage.type.tsx",
-				"storage.type.type",
-				"storage.type.interface",
-				"storage.type.class",
-				"storage.modifier",
-				"storage.modifier.async.tsx",
+                "constant.language",
+                // "keyword.function",
+				// "keyword.other",
+				// "support.constant",
+				// "constant.character",
+                
+                // "support.function.builtin.odin",
+                
+				"invalid",
+				// "punctuation.section.embedded",
+				// "punctuation.definition.template-expression",
+				// "storage.type.type",
+				// "storage.type.interface",
+				// "storage.type.class",
+				// "storage.modifier",
 			],
 			"settings": {
 				"foreground": "#f5f3ef"
 			}
 		},
 		{
-			"name": "Function, Special Method",
+			"name": "Functions",
 			"scope": [
-				"entity.name.function",
-				"variable.function",
-				"support.function",
-				"keyword.other.special-method",
-				"entity.name.tag",
+                "entity.name.function",
+				// "variable.function",
+				// "support.function",
 			],
 			"settings": {
 				"foreground": "#009052"
 			}
 		},
 		{
-			"name": "Keyword, Constant",
-			"scope": [
-				"constant.language",
-				"support.constant",
-				"constant.character",
-				"keyword.other.unit",
-				"keyword.other",
-				"keyword.function",
-				"invalid",
-			],
-			"settings": {
-				"foreground": "#F5F3EF"
-			}
-		},
-		{
-			"name": "String, Symbols, Annotations",
-			"scope": [
-				"string",
-				"string.template",
-				"constant.character.escape",
-				"constant.other.symbol",
-				"constant.other.key",
-				"entity.other.inherited-class",
-				"punctuation.definition.string",
-				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js",
-			],
+			"name": "Strings",
+			"scope": "string",
 			"settings": {
 				"foreground": "#ffb433"
 			}
@@ -601,26 +577,10 @@
 				"storage.type",
 				"support.type.primitive",
 				"support.type.builtin",
-				"entity.name",
-				"support.class",
-				"support.other.namespace.use.php",
-				"meta.use.php",
-				"support.other.namespace.php",
-				"support.type.sys-types",
+				"entity.name.type",
 			],
 			"settings": {
 				"foreground": "#9CC56B"
-			}
-		},
-		{
-			"name": "Reset specific scopes to normal",
-			"scope": [
-				"support.type.property-name",
-				"keyword.operator.type.annotation",
-				"entity.name.variable"
-			],
-			"settings": {
-				"foreground": "#f1d184"
 			}
 		},
 	]
