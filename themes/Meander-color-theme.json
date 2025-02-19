@@ -150,7 +150,7 @@
 		"inputOption.activeForeground": "#f1d184",
 		"inputOption.hoverBackground": "#57584f",
 		
-		// TODO
+		// TODO:
 		// "inputValidation.errorBackground": "#3b3c35",
 		// "inputValidation.errorBorder": "#f92672",
 		// "inputValidation.errorForeground": "#f92672",
@@ -161,11 +161,11 @@
 		// "inputValidation.warningBorder": "#fd971f",
 		// "inputValidation.warningForeground": "#fd971f",
 		
-		// TODO
+		// TODO:
 		// "interactive.activeCodeBorder": "#6e7066",
 		// "interactive.inactiveCodeBorder": "#3b3c35",
 		
-		// TODO
+		// TODO:
 		// "list.activeSelectionBackground": "#ff0000",
 		// "list.activeSelectionForeground": "#f5f3ef",
 		
@@ -183,7 +183,7 @@
 		"list.inactiveSelectionForeground": "#e6db74",
 
 
-		// TODO
+		// TODO:
 		// "listFilterWidget.background": "#272822",
 		// "listFilterWidget.noMatchesOutline": "#f92672",
 		// "listFilterWidget.outline": "#272822",
@@ -197,7 +197,7 @@
 
 		"menubar.selectionForeground": "#f5f3ef",
 		
-		// TODO
+		// TODO:
 		// "merge.border": "#272822",
 		// "merge.commonContentBackground": "#fdfff119",
 		// "merge.commonHeaderBackground": "#fdfff126",
@@ -206,7 +206,7 @@
 		// "merge.incomingContentBackground": "#a6e22e19",
 		// "merge.incomingHeaderBackground": "#a6e22e26",
 		
-		// TODO
+		// TODO:
 		// "mergeEditor.change.background": "#fdfff119",
 		// "mergeEditor.change.word.background": "#fdfff119",
 		// "mergeEditor.conflict.handled.minimapOverViewRuler": "#a6e22e",
@@ -407,7 +407,7 @@
 		"editorSuggestWidget.selectedBackground": "#1f7548",
 		"editorSuggestWidget.selectedForeground" :"#f5f3ef",
 
-		"editorWidget.background": "#1f7548",
+		"editorWidget.background": "#001209",
 		"editorWidget.border": "#f1d184",
 		
 
@@ -497,10 +497,7 @@
 		"tree.inactiveIndentGuidesStroke": "#1f7548",
 		"tree.indentGuidesStroke": "#f1d184",
 		
-
-
-		"widget.shadow": "#000000",
-		
+		"widget.shadow": "#1f7548",
 	},
 	/* 
 		// TODO(viktor): split off background lighter green from lighter green for foreground
@@ -509,8 +506,10 @@
 		-------
 		#f5f3ef bright white
 		#f1d184 bright yellow
-        #9CC56B bright green
+        #35D18A bright emerald
 		-------
+        #C1B28B gray
+         
 		#ffb433 orange 
 		#fe163d red
 		#009052 green
@@ -519,69 +518,51 @@
          
 	*/
 	"tokenColors": [
-        {
-			"name": "Comment",
-			"scope": "comment",
-			"settings": {
-				"foreground": "#9B1144",
-				"fontStyle": "italic",
-			}
-		},
-		
 		{
-			"name": "Keyword, Operator, Constant",
-			"scope": [
-                "keyword",
-				"storage.type.function.arrow",
-                "constant.language",
-                // "keyword.function",
-				// "keyword.other",
-				// "support.constant",
-				// "constant.character",
-                
-                // "support.function.builtin.odin",
-                
-				"invalid",
-				// "punctuation.section.embedded",
-				// "punctuation.definition.template-expression",
-				// "storage.type.type",
-				// "storage.type.interface",
-				// "storage.type.class",
-				// "storage.modifier",
-			],
-			"settings": {
-				"foreground": "#f5f3ef"
-			}
-		},
-		{
-			"name": "Functions",
+			"name": "Control Flow",
 			"scope": [
                 "entity.name.function",
-				// "variable.function",
-				// "support.function",
+                "keyword.control",
+                "keyword.operator",
 			],
-			"settings": {
-				"foreground": "#009052"
-			}
+			"settings": { "foreground": "#f5f3ef" }
 		},
 		{
-			"name": "Strings",
-			"scope": "string",
-			"settings": {
-				"foreground": "#ffb433"
-			}
-		},
-		{
-			"name": "Types",
+			"name": "Data",
 			"scope": [
 				"storage.type",
 				"support.type.primitive",
 				"support.type.builtin",
 				"entity.name.type",
+                
+                "storage.modifier", // auto_cast
+                
 			],
+			"settings": { "foreground": "#009052"}
+		},
+        {
+			"name": "Annotations",
+			"scope": [
+                "entity.name.tag",
+                "keyword.control.attribute",
+                "entity.other.attribute-name",
+            ],
 			"settings": {
-				"foreground": "#9CC56B"
+				"foreground": "#C1B28B",
 			}
+		},
+        {
+			"name": "Comment",
+			"scope": "comment",
+			"settings": {
+				"foreground": "#C1B28B",
+				"fontStyle": "italic",
+			}
+		},
+		{
+			"name": "Strings",
+			"scope": "string",
+			"settings": { "foreground": "#ffb433" }
 		},
 	]
 }
