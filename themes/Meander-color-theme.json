@@ -24,6 +24,9 @@
 		#fe163d red
 		#e46738 hazel 
 		#ffb433 orange 
+        
+        #fe163d bright red
+        #f92672 bright pink
          
 	*/
 	"tokenColors": [
@@ -63,14 +66,24 @@
                 "constant.language",
                 "constant.numeric",
             ],
-			"settings": { "foreground": "#2EC4B6" }
+			"settings": { "foreground": "#90CB9D" }
 		},
 		{
-			"name": "Data",
+			"name": "Strings",
 			"scope": [
                 "string",
             ],
-			"settings": { "foreground": "#FF7E6B" }
+			"settings": { "foreground": "#3E94AD" }
+		},
+		{
+			"name": "Reset Json",
+			"scope": [
+                "punctuation.support.type.property-name.begin.json",
+                "punctuation.support.type.property-name.end.json",
+                "punctuation.definition.string.begin.json",
+                "punctuation.definition.string.end.json",
+            ],
+			"settings": { "foreground": "#f1d184" }
 		},
         
         //------- Low Contrast
@@ -85,9 +98,11 @@
         {
 			"name": "Annotations",
 			"scope": [
+                "entity.name.tag.odin", // #reverse
                 "keyword.function", // cast
                 "keyword.other",    // directives
                 "storage.modifier", // using, auto_cast
+                "entity.name.label.odin", // loop labels
                 // attributes
                 "keyword.control.attribute",
                 "entity.other.attribute-name", 
@@ -469,8 +484,8 @@
 		"editor.findMatchForeground": "#001209",
 		"editor.findMatchBorder": "#00000000",
 		
-		// "editor.findMatchHighlightBackground": "#009052",
-		// "editor.findMatchHighlightForeground":"#001209",
+		"editor.findMatchHighlightBackground": "#009052AF",
+		"editor.findMatchHighlightForeground":"#001209FF",
 		"editor.findMatchHighlightBorder": "#00000000",
 
 		"editor.findRangeHighlightBackground": "#f5f3ef20",
