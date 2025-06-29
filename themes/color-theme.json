@@ -1,32 +1,25 @@
 { "name": "Meander",
     /* 
 		// TODO(viktor): split off background lighter green from lighter green for foreground
-		#001209 dark green    // background
-		#f1d184 jasmine // foreground
-		
 		#009052 dim green // TODO: remove this
+        
         ------- Low Contrast
+		#001209 dark green    // background
         #C1B28B gray
         
 		------- High Contrast
-		#f5f3ef white   // hightlight/focus
+		#f1d184 jasmine       // foreground
+		#f5f3ef white         // hightlight/focus
 		#009052 green
-        #35D18A emerald // tags
+        #35D18A emerald       // tags
+        
+        #a1e381 light green   // literals
+        #8ddde8 light blue    // strings
         
 		#2EC4B6 sea green
-		#C92F5F rose
         #7C7A8B taupe gray
-        #FF7E6B salmon
-        
-		#90CB9D celadon
-		#12a4cc blue
-		#9B1144 wine
-		#fe163d red
-		#e46738 hazel 
-		#ffb433 orange 
-        
+
         #fe163d bright red
-        #f92672 bright pink
          
 	*/
 	"tokenColors": [
@@ -66,14 +59,14 @@
                 "constant.language",
                 "constant.numeric",
             ],
-			"settings": { "foreground": "#90CB9D" }
+			"settings": { "foreground": "#a1e381" }
 		},
 		{
 			"name": "Strings",
 			"scope": [
                 "string",
             ],
-			"settings": { "foreground": "#3E94AD" }
+			"settings": { "foreground": "#8ddde8" }
 		},
 		{
 			"name": "Reset Json",

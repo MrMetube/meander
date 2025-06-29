@@ -1,21 +1,36 @@
 {
-  "name": "meander",
-  "displayName": "Meander",
-  "description": "A Color Theme",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.93.0"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "contributes": {
-    "themes": [
-      {
-        "label": "Meander",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Meander-color-theme.json"
-      }
-    ]
-  }
+    "name": "meander",
+    "displayName": "Meander",
+    "description": "My Stuff",
+    "version": "1.0.0",
+    "publisher": "meander",
+    "engines": {
+        "vscode": "^1.100.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "extension.js",
+    "type": "module",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Meander",
+                "uiTheme": "vs-dark",
+                "path": "./themes/color-theme.json"
+            }
+        ],
+        "commands": [
+            { "command": "meander.start", "title": "Raddbg: Start Debugging" },
+            { "command": "meander.open",  "title": "Raddbg: Open Debugger" }
+        ],
+        "keybindings": [
+            { "command": "meander.start", "key": "F5", "when": "editorTextFocus" },
+            { "command": "meander.open",  "key": "Shift+F5", "when": "editorTextFocus" }
+        ]
+        
+    }
 }
