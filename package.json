@@ -25,7 +25,8 @@
         ],
         "commands": [
             { "command": "meander.start", "title": "Raddbg: Start Debugging" },
-            { "command": "meander.open",  "title": "Raddbg: Open Debugger" }
+            { "command": "meander.open",  "title": "Raddbg: Open Debugger" },
+            { "command": "meander.toggle_math",  "title": "Inline Math: Toggle showing calculations" }
         ],
         "keybindings": [
             { "command": "meander.start", "key": "F5", "when": "editorTextFocus" },
