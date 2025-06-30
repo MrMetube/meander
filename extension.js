@@ -17,8 +17,10 @@ export function activate(context) {
         }),
         vscode.commands.registerCommand('meander.toggle_math', () => {
             config.showInlineMath = !config.showInlineMath;
-            vscode.window.showErrorMessage(`Inline Math is now: ${config.showInlineMath ? "shown" : "hidden"}`);
             updateDecorations(vscode.window.activeTextEditor);
+        }),
+        vscode.commands.registerCommand('meander.check_math', () => {
+            vscode.window.showInformationMessage(`Inline Math is currently ${config.showInlineMath ? "active" : "inactive"}`);
         }),
     );
     
@@ -81,7 +83,7 @@ async function startRadDebugger(run) {
 ////////////////////////////////////////////////
 // inline math
 
-const MathComment = '///'
+const MathComment = '/// '
 // A map to store active decorations for clearing.
 const activeDecorations = new Map();
 
@@ -110,7 +112,6 @@ function updateDecorations(editor) {
     });
     
     if (!config.showInlineMath) {
-        vscode.window.showErrorMessage(`Inline Math is now: ${config.showInlineMath ? "shown" : "hidden"}`);
         clearDecorations()
     } else {
         const oldDecoration = activeDecorations.get(editor);
@@ -125,7 +126,7 @@ function updateDecorations(editor) {
             let expression = null;
 
             // Extract expression from comment line
-            if (line.text.startsWith(MathComment)) {
+            if (line.text.includes(MathComment)) {
                 expression = line.text.substring(line.text.indexOf(MathComment) + MathComment.length).trim();
             }
             if (expression === null || expression.length === 0) continue;

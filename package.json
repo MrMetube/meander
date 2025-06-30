@@ -24,13 +24,15 @@
             }
         ],
         "commands": [
-            { "command": "meander.start", "title": "Raddbg: Start Debugging" },
-            { "command": "meander.open",  "title": "Raddbg: Open Debugger" },
-            { "command": "meander.toggle_math",  "title": "Inline Math: Toggle showing calculations" }
+            { "command": "meander.start",       "category": "Raddbg", "title": "Start Debugging" },
+            { "command": "meander.open",        "category": "Raddbg", "title": "Open Debugger" },
+            { "command": "meander.toggle_math", "category": "Inline Math", "title": "Toggle showing calculations" },
+            { "command": "meander.check_math",  "category": "Inline Math", "title": "Are calculations being show?" }
         ],
         "keybindings": [
             { "command": "meander.start", "key": "F5", "when": "editorTextFocus" },
-            { "command": "meander.open",  "key": "Shift+F5", "when": "editorTextFocus" }
+            { "command": "meander.open",  "key": "Shift+F5", "when": "editorTextFocus" },
+            { "command": "meander.toggle_math",  "key": "Ctrl+Shift+o", "when": "editorTextFocus" }
         ]
         
     }
