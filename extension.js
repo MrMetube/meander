@@ -65,10 +65,13 @@ async function executeCommand(command) {
 
 async function startRadDebugger(run) {
     const isRaddbgRunning = (await executeCommand('tasklist /NH')).toLowerCase().includes('raddbg.exe'.toLowerCase());
+    // @todo(viktor): we dont want multiple windos of raddebugger. dont kill it
+    // Maybe just have F5 always only open(and maybe make a keybind for close)
+    // Then we dont need to send raddbg a signal to start running.
     if (isRaddbgRunning) {
         await executeCommand('taskkill /IM raddbg.exe /F');
     }
-    
+
     try {
         if (run) {
             await executeCommand(`${config.raddbgPath} --auto_run --quit_after_success`);

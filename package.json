@@ -30,8 +30,8 @@
             { "command": "meander.check_math",  "category": "Inline Math", "title": "Are calculations being show?" }
         ],
         "keybindings": [
-            { "command": "meander.start", "key": "F5", "when": "editorTextFocus" },
-            { "command": "meander.open",  "key": "Shift+F5", "when": "editorTextFocus" },
+            { "command": "meander.start", "key": "F5" },
+            { "command": "meander.open",  "key": "F6" },
             { "command": "meander.toggle_math",  "key": "Ctrl+Shift+o", "when": "editorTextFocus" }
         ]
         
