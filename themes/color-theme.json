@@ -39,7 +39,8 @@
 			"name": "Functions",
 			"scope": [
                 "entity.name.function",
-                "support.function.builtin"
+                "support.function.builtin",
+                "support.function",
 			],
 			"settings": { "foreground": "#009052" }
 		},

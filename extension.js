@@ -3,18 +3,14 @@ import { evaluate_expression } from './calculator.js';
 import { exec } from 'child_process';
 
 const config = {
-    raddbgPath: 'C:\\tools\\raddbg\\raddbg.exe',
     showInlineMath: true,
 };
 
 export function activate(context) {
     context.subscriptions.push(
-        vscode.commands.registerCommand('meander.start', () => {
-            startRadDebugger(true);
-        }),
-        vscode.commands.registerCommand('meander.open', () => {
-            startRadDebugger(false);
-        }),
+        vscode.commands.registerCommand('meander.debug_and_run', () => { startRadDebugger(true); }),
+        vscode.commands.registerCommand('meander.open_debug',    () => { startRadDebugger(false); }),
+        
         vscode.commands.registerCommand('meander.toggle_math', () => {
             config.showInlineMath = !config.showInlineMath;
             updateDecorations(vscode.window.activeTextEditor);
@@ -27,6 +23,7 @@ export function activate(context) {
     updateDecorations(vscode.window.activeTextEditor);
 
     vscode.workspace.onDidChangeTextDocument(event => {
+        if (!config.showInlineMath) return;
         const editor = vscode.window.activeTextEditor;
         if (editor && event.document === editor.document) {
             updateDecorations(editor);
@@ -45,42 +42,34 @@ export function deactivate() {
 ////////////////////////////////////////////////
 // rad debugger
 
-async function executeCommand(command) {
-    try {
-        const stdout = await new Promise((resolve, reject) => {
-            exec(command, (error, stdout, stderr) => {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(stdout);
-                }
-            });
-        });
-        return stdout;
-    } catch (error) {
-        console.error(`Command execution failed: ${error.message}`);
-        throw error;
-    }
-}
-
 async function startRadDebugger(run) {
-    const isRaddbgRunning = (await executeCommand('tasklist /NH')).toLowerCase().includes('raddbg.exe'.toLowerCase());
-    // @todo(viktor): we dont want multiple windos of raddebugger. dont kill it
-    // Maybe just have F5 always only open(and maybe make a keybind for close)
-    // Then we dont need to send raddbg a signal to start running.
-    if (isRaddbgRunning) {
-        await executeCommand('taskkill /IM raddbg.exe /F');
-    }
+    const task_name = 'Odin Build';
+    
+    const tasks = await vscode.tasks.fetchTasks();
+    const task = tasks.find(t => t.name === task_name);
 
-    try {
-        if (run) {
-            await executeCommand(`${config.raddbgPath} --auto_run --quit_after_success`);
-        } else {
-            await executeCommand(`${config.raddbgPath}`);
-        }
-    } catch (error) {
-        vscode.window.showErrorMessage(`Failed to start Rad Debugger: ${error.message}`);
+    const additionalArgs = ["debugger"];
+    if (run) {
+        additionalArgs.push("run")
     }
+    
+    if (!task) {
+        vscode.window.showErrorMessage('Task '+task_name+' not found!');
+        return
+    }
+    
+    const newTask = new vscode.Task(
+        task.definition,
+        task.scope,
+        task.name,
+        task.source,
+        new vscode.ShellExecution( task.execution.command, [...task.execution.args, ...additionalArgs] ),
+        task.problemMatcher,
+        task.group,
+        task.presentationOptions,
+    );
+
+    vscode.tasks.executeTask(newTask);
 }
 
 ////////////////////////////////////////////////
