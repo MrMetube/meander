@@ -65,9 +65,8 @@ async function startRadDebugger(run) {
         task.source,
         new vscode.ShellExecution( task.execution.command, [...task.execution.args, ...additionalArgs] ),
         task.problemMatcher,
-        task.group,
-        task.presentationOptions,
     );
+    newTask.presentationOptions = task.presentationOptions;
 
     vscode.tasks.executeTask(newTask);
 }
