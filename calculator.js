@@ -258,6 +258,10 @@ function lengthSquared(v) {
     return dotProduct(v, v);
 }
 
+function arm(x) {
+    return [Math.cos(x), Math.sin(x)];
+}
+
 // Calculates length (magnitude) of a vector
 function length(v) {
     const lSq = lengthSquared(v);
@@ -272,12 +276,15 @@ function createArray(n, x) {
     }
     return Array(n).fill(x);
 }
-
+// @todo(viktor): add Tau radtodeg degtorad and cos sin tan and stuff
 // List of supported functions for the parser
 const functions = [
     { name: "dot", args: 2, impl: dotProduct },
     { name: "cross", args: 2, impl: crossProduct },
     { name: "normalize", args: 1, impl: normalize },
+    { name: "max", args: 2, impl: Math.max },
+    { name: "min", args: 2, impl: Math.min },
+    { name: "arm", args: 1, impl: arm },
     { name: "length", args: 1, impl: length },
     { name: "length_squared", args: 1, impl: lengthSquared },
     { name: "array", args: 2, impl: createArray }, // Add createArray as "array" function
